@@ -1,0 +1,32 @@
+[core]
+    editor = vim
+
+[push]
+    default = simple
+
+[i18n]
+    commitencoding = utf-8
+    logoutputencoding = utf-8
+
+[branch]
+    autosetupmerge = true
+    autosetuprebase = always
+
+[help]
+    autocorrect = 20
+
+[diff]
+    tool = intellij
+
+[difftool "intellij"]
+    cmd = intellij-idea-ultimate diff $LOCAL $REMOTE
+
+[merge]
+    tool = intellij
+
+[mergetool "intellij"]
+    cmd = intellij-idea-ultimate merge $LOCAL $REMOTE $BASE $MERGED
+    trustExitCode = true
+[user]
+	name = {{ onepasswordRead "op://Personal/myself/firstname" }} {{ onepasswordRead "op://Personal/myself/lastname" }}
+	email = {{ onepasswordRead "op://Personal/myself/email" }}
