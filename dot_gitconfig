@@ -28,7 +28,8 @@
     cmd = intellij-idea-ultimate merge $LOCAL $REMOTE $BASE $MERGED
     trustExitCode = true
 [user]
-	name = {{ onepasswordRead "op://Personal/myself/firstname" }} {{ onepasswordRead "op://Personal/myself/lastname" }}
-	email = {{ onepasswordRead "op://Personal/myself/email" }}
+    name = {{op read --no-newline op://Personal/myself/firstname}} {{op read --no-newline op://Personal/myself/lastname}}
+    email = {{op read --no-newline op://Personal/myself/email}}
+
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
