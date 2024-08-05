@@ -1,0 +1,192 @@
+{
+    "workbench.tree.indent": 16,
+    "workbench.startupEditor": "newUntitledFile",
+    "breadcrumbs.enabled": false,
+    "terminal.integrated.fontSize": 14,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.fontSize": 14,
+    "editor.glyphMargin": false,
+    "editor.minimap.enabled": false,
+    "editor.roundedSelection": false,
+    "editor.renderLineHighlight": "none",
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.formatOnSave": true,
+    "editor.folding": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.bracketPairsHorizontal": "active",
+    "editor.tabSize": 4,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "go.toolsManagement.autoUpdate": true,
+    "go.buildFlags": [
+        "-v"
+    ],
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.testEnvFile": "",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "extensions.ignoreRecommendations": true,
+    "editor.guides.indentation": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.enableExperiments": false,
+    "telemetry.telemetryLevel": "off",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.cursorSurroundingLines": 10,
+    "vscode-neovim.mouseSelectionStartVisualMode": true,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "whichkey.delay": 0,
+    "whichkey.sortOrder": "alphabetically",
+    "whichkey.bindings": [
+        {
+            "key": ";",
+            "name": "commands",
+            "type": "command",
+            "command": "workbench.action.showCommands"
+        },
+        {
+            "key": "k",
+            "name": "Close active editor",
+            "type": "command",
+            "command": "workbench.action.closeActiveEditor"
+        },
+        {
+            "key": "q",
+            "name": "Kill Terminal",
+            "type": "command",
+            "command": "workbench.action.terminal.kill"
+        },
+        {
+            "key": "t",
+            "name": "Toggle Terminal",
+            "type": "command",
+            "command": "workbench.action.togglePanel"
+        },
+        {
+            "key": "b",
+            "name": "Buffers/Editors...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "b",
+                    "name": "Show all buffers/editors",
+                    "type": "command",
+                    "command": "workbench.action.showAllEditors"
+                },
+                {
+                    "key": "m",
+                    "name": "Close other editors",
+                    "type": "command",
+                    "command": "workbench.action.closeOtherEditors"
+                },
+                {
+                    "key": "u",
+                    "name": "Reopen closed editor",
+                    "type": "command",
+                    "command": "workbench.action.reopenClosedEditor"
+                },
+                {
+                    "key": "y",
+                    "name": "Copy buffer to clipboard",
+                    "type": "commands",
+                    "commands": [
+                        "editor.action.selectAll",
+                        "editor.action.clipboardCopyAction",
+                        "cancelSelection"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "e",
+            "name": "Toggle Explorer",
+            "type": "command",
+            "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
+            "key": "f",
+            "name": "Find & Replace...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "f",
+                    "name": "File",
+                    "type": "command",
+                    "command": "editor.action.startFindReplaceAction"
+                },
+                {
+                    "key": "s",
+                    "name": "Symbol",
+                    "type": "command",
+                    "command": "editor.action.rename",
+                    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+                },
+                {
+                    "key": "p",
+                    "name": "Project",
+                    "type": "command",
+                    "command": "workbench.action.replaceInFiles"
+                }
+            ]
+        },
+        {
+            "key": "h",
+            "name": "Split Horizontal",
+            "type": "command",
+            "command": "workbench.action.splitEditorDown"
+        },
+        {
+            "key": "s",
+            "name": "Search...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "f",
+                    "name": "files",
+                    "type": "command",
+                    "command": "workbench.action.quickOpen"
+                },
+                {
+                    "key": "t",
+                    "name": "text",
+                    "type": "command",
+                    "command": "workbench.action.findInFiles"
+                }
+            ]
+        },
+        {
+            "key": "v",
+            "name": "Split Vertical",
+            "type": "command",
+            "command": "workbench.action.splitEditor"
+        },
+        {
+            "key": "z",
+            "name": "Toggle zen mode",
+            "type": "command",
+            "command": "workbench.action.toggleZenMode"
+        }
+    ],
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "go.buildTags": "dev",
+}
