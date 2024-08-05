@@ -1,0 +1,4 @@
+fluxn() {
+    flux -n $(kubectl config view --minify -o jsonpath='{..namespace}') "$@"
+}
+

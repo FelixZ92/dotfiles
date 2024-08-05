@@ -30,3 +30,5 @@
 [user]
 	name = {{ onepasswordRead "op://Personal/myself/firstname" }} {{ onepasswordRead "op://Personal/myself/lastname" }}
 	email = {{ onepasswordRead "op://Personal/myself/email" }}
+[url "git@github.com:"]
+	insteadOf = https://github.com/
