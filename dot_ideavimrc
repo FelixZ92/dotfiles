@@ -1,0 +1,176 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+let mapleader=" "
+set ideastrictmode
+""" Plugins  --------------------------------
+set surround
+set highlightedyank
+set nerdtree
+set sneak
+set easymotion
+set which-key
+set quickscope
+
+set notimeout
+
+set nobackup
+set noswapfile
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+set history=1000
+
+set scrolloff=8
+set number relativenumber
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set showmode
+set showcmd
+set visualbell
+
+set ideajoin
+set ideamarks
+set idearefactormode=normal
+set ideastatusicon=gray
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+let g:WhichKey_FontSize = 20
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map \e to open the .ideavimrc file
+nnoremap \e :e ~/.ideavimrc<CR>
+"" Map \r to reload the .ideavimrc file
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+map <C-c> <Esc>
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+
+" Pane navigation
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+
+let g:WhichKeyDesc_code = "<leader>c +code"
+vnoremap <leader>cc :action CommentByLineComment<CR>
+let g:WhichKeyDesc_code_line_comment = "<leader>cc toggle line comment"
+nnoremap <leader>cm :action Refactorings.QuickListPopupAction<CR>
+let g:WhichKeyDesc_code_refactor_quick_menu = "<leader>cm Refactor Quick Menu"
+nnoremap <leader>cf :action ReformatCode<CR>
+let g:WhichKeyDesc_code_format = "<leader>cf Reformat Code"
+nnoremap <leader>cr :action RenameElement<CR>
+let g:WhichKeyDesc_code_rename = "<leader>cr Rename"
+nnoremap <leader>cR :action RenameFile<CR>
+let g:WhichKeyDesc_code_rename_file = "<leader>cR Rename File"
+nnoremap <leader>co :action OptimizeImports<CR>
+let g:WhichKeyDesc_code_optimize_imports = "<leader>co OptimizeImports"
+
+let g:WhichKeyDesc_debug = "<leader>d +debug"
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_debug_toggle_breakpoint = "<leader>db Toggle Breakpoint"
+nmap <leader>dx <Action>(Debug)
+let g:WhichKeyDesc_debug_execute = "<leader>dx Execute Debug"
+nmap <leader>dc <Action>(ContextDebug)
+let g:WhichKeyDesc_debug_context = "<leader>dc Context Debug"
+nmap <leader>dv <Action>(ViewBreakpoints)
+let g:WhichKeyDesc_debug_view_breakpoints = "<leader>dv View Breakpoints"
+nmap <leader>de <Action>(EditBreakpoint)
+let g:WhichKeyDesc_debug_edit_breakpoints = "<leader>de Edit Breakpoints"
+nmap <leader>dm <Action>(XDebugger.MuteBreakpoints)
+let g:WhichKeyDesc_debug_mute_breakpoints = "<leader>dm Mute Breakpoints"
+nmap <leader>dC <Action>(RunToCursor)
+let g:WhichKeyDesc_debug_run_to_cursor = "<leader>dC Run to Cursor"
+nmap <leader>di <Action>(StepInto)
+let g:WhichKeyDesc_debug_step_into = "<leader>di Step Into"
+nmap <leader>do <Action>(StepOver)
+let g:WhichKeyDesc_debug_step_over = "<leader>do Step Over"
+nmap <leader>dO <Action>(StepOut)
+let g:WhichKeyDesc_debug_step_out = "<leader>dO Step Out"
+nmap <leader>dr <Action>(Resume)
+let g:WhichKeyDesc_debug_resume = "<leader>dr Resume Debugging"
+nmap <leader>dR <Action>(EvaluateExpression)
+let g:WhichKeyDesc_debug_evaluate_expression = "<leader>dR Evaluate Expression"
+nmap <leader>dw <Action>(ActivateDebugToolWindow)
+let g:WhichKeyDesc_debug_activate_tool_window = "<leader>dw Activate Debug Tool Window"
+
+let g:WhichKeyDesc_search = "<leader>s +search"
+nnoremap <leader>sg :action FindInPath<CR>
+let g:WhichKeyDesc_search_find_in_path = "<leader>sg find in path (grep)"
+nnoremap <leader>sa :action GotoAction<CR>
+let g:WhichKeyDesc_search_action = "<leader>sa search actions"
+nnoremap <leader>sf :action GotoFile<CR>
+let g:WhichKeyDesc_search_files = "<leader>sf search files"
+nnoremap <leader>ss :action GotoSymbol<CR>
+let g:WhichKeyDesc_search_symboles = "<leader>ss search symbols"
+
+let g:WhichKeyDesc_goto = "g Go To"
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+let g:WhichKeyDesc_goto_implementation = "gi Go To Implementation"
+nnoremap gd :action GotoTypeDeclaration<CR>
+let g:WhichKeyDesc_goto_type_declaration = "gD Go To Type Declaration"
+nnoremap gd :action GotToDeclaration<CR>
+let g:WhichKeyDesc_goto_declaration = "gd Go To Declaration"
+nnoremap gp :action GotToSuperMethod<CR>
+let g:WhichKeyDesc_goto_super_method = "gp Go To Super Method"
+nnoremap gt :action GotoTest<CR>
+let g:WhichKeyDesc_goto_test = "gt Go To Test"
+nnoremap gb :action Back<CR>
+let g:WhichKeyDesc_goto_back = "gb Go Back"
+nnoremap gf :action Forward<CR>
+let g:WhichKeyDesc_goto_forward = "gf Go Forward"
+nnoremap gr :action FindUsages<CR>
+let g:WhichKeyDesc_goto_find_usages = "gr Go To References"
+
+let g:WhichKeyDesc_test = "<leader>t +test"
+nmap <leader>tR <Action>(RunTests)
+let g:WhichKeyDesc_test_run = "<leader>tR Run Tests"
+nmap <leader>rF <action>(RerunFailedTests)
+let g:WhichKeyDesc_test_rerun_failed = "<leader>rF Rerun Failed Tests"
+nmap <leader>tr <Action>(RunClass)
+let g:WhichKeyDesc_test_run_class = "<leader>tr Run Test (using RunClass)"
+
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+
+nmap <C-m> <Action>(ShowPopupMenu)
+nmap <C-S-m> <Action>(ToolWindowsGroup)
+""" Jump between methods
+
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
+"" keep cursor in screen mid when half page jumping
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+"" keep cursor in screen mid when searching
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Move line down
+vnoremap J :m '>+1<CR>gv=gv
+
+" Move line up
+vnoremap K :m '<-2<CR>gv=gv
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+" Popup navigation
+inoremap <C-j> <Action>(PopupMenu-selectNext)
+inoremap <C-k> <Action>(PopupMenu-selectPrevious)
