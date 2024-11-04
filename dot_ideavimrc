@@ -35,11 +35,14 @@ set softtabstop=4
 set showmode
 set showcmd
 set visualbell
+set signcolumn="yes"
 
+""" Idea specific settings ------------------
 set ideajoin
 set ideamarks
 set idearefactormode=normal
 set ideastatusicon=gray
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -120,11 +123,9 @@ let g:WhichKeyDesc_goto = "g Go To"
 nnoremap gc :action GotoClass<CR>
 nnoremap gi :action GotoImplementation<CR>
 let g:WhichKeyDesc_goto_implementation = "gi Go To Implementation"
-nnoremap gd :action GotoTypeDeclaration<CR>
-let g:WhichKeyDesc_goto_type_declaration = "gD Go To Type Declaration"
-nnoremap gd :action GotToDeclaration<CR>
+nnoremap gd :action GotoDeclaration<CR>
 let g:WhichKeyDesc_goto_declaration = "gd Go To Declaration"
-nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gp :action GotoSuperMethod<CR>
 let g:WhichKeyDesc_goto_super_method = "gp Go To Super Method"
 nnoremap gt :action GotoTest<CR>
 let g:WhichKeyDesc_goto_test = "gt Go To Test"
@@ -153,23 +154,38 @@ nmap <C-S-m> <Action>(ToolWindowsGroup)
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
 
-"" keep cursor in screen mid when half page jumping
+""" keep cursor in screen mid when half page jumping vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump half page down" })
 nnoremap <C-d> <C-d>zz
+"""vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
 nnoremap <C-u> <C-u>zz
-"" keep cursor in screen mid when searching
+
+"""keep cursor in screen mid when searching
+"""vim.keymap.set("n", "n", "nzzzv")
 nnoremap n nzzzv
+"""vim.keymap.set("n", "N", "Nzzzv")
 nnoremap N Nzzzv
 
-" Move line down
-vnoremap J :m '>+1<CR>gv=gv
+""" move line down in visual mode vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+vnoremap J :m '>+1<CR>gv=gv'
+""" move line up in visual mode vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+vnoremap K :m '<-2<CR>gv=gv'
 
-" Move line up
-vnoremap K :m '<-2<CR>gv=gv
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+""" keep paste buffer when highlighted in visual mode
+""" vim.keymap.set("x", "<leader>p", '"_dP')
+xnoremap <leader>p "_dP
 
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+""" support ctrl-c for multiline edit via in visual block mode
+"""vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Apply multiline insert" })
+inoremap <C-c> <Esc>
+
+" vim.keymap.set(
+"   "n",
+"   "<leader>rw",
+"   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+"   { desc = "VIM foo to replace current word" }
+" )
+
+nnoremap <leader>rw [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]] 
 
 " Popup navigation
 inoremap <C-j> <Action>(PopupMenu-selectNext)
