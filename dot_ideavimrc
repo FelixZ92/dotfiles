@@ -177,6 +177,8 @@ xnoremap <leader>p "_dP
 """ support ctrl-c for multiline edit via in visual block mode
 """vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Apply multiline insert" })
 inoremap <C-c> <Esc>
+inoremap <C-n> :action SmartTypeCompletion<CR>
+inoremap <C-x> :action SmartTypeCompletion<CR>
 
 " vim.keymap.set(
 "   "n",

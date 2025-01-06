@@ -110,6 +110,7 @@ compinit
 source <(flux completion zsh)
 source <(hcloud completion zsh)
 source <(talosctl completion zsh)
+source <(helm completion zsh)
 
 source "$HOME/.aliases"
 source "$HOME/.functions"
