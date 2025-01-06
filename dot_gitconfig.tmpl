@@ -27,9 +27,20 @@
 [mergetool "intellij"]
     cmd = intellij-idea-ultimate merge $LOCAL $REMOTE $BASE $MERGED
     trustExitCode = true
+
 [user]
     name = {{ onepasswordRead "op://Personal/myself/firstname" }} {{ onepasswordRead "op://Personal/myself/lastname" }}
     email = {{ onepasswordRead "op://Personal/myself/email" }}
+    signingkey = {{ onepasswordRead "op://Personal/GitHub-signing/publickey" }}
 
 [url "git@github.com:"]
     insteadOf = https://github.com/
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
